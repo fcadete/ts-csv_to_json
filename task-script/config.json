@@ -1,0 +1,10 @@
+{
+    "language": "python",
+    "runtime": "python3.11",
+    "functions": [
+        {
+            "slug": "csv-to-json",
+            "function": "main.csv_to_json"
+        }
+    ]
+}

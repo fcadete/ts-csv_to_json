@@ -1,0 +1,13 @@
+protocolSchema: "v3"
+name: "CSV to JSON - v3 protocol"
+description: "Protocol that prints original CSV file and writes JSON conversion to Data Lake"
+
+steps:
+  - id: csv-to-json-step
+    task:
+      namespace: private-interview-fcadete
+      slug: fcadete-csvtojson
+      version: v1.0.0
+      function: csv-to-json
+    input:
+      input_file_pointer: $( workflow.inputFile )
