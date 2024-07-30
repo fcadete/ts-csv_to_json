@@ -1,8 +1,9 @@
 from ts_sdk.task.__task_script_runner import Context
+from task_script.csv_to_json import csv_to_json
 import pandas as pd
 import os
 
-def csv_to_json(input: dict, context: object):
+def csv_to_json_main(input: dict, context: object):
     """A function to the input CSV file to a JSON file
     
     This function was written in the context of the panel interview for TetraScience.
@@ -30,16 +31,9 @@ def csv_to_json(input: dict, context: object):
 
     input_table = pd.read_csv(input_data['file_obj'])
 
-    print("CSV table uploaded is:")
-    print(input_table.to_string())
-
-    input_json = input_table.to_json(orient='index')
-
-    print("Convertion to JSON is:")
-    print(str(input_json))
+    input_json = csv_to_json(input_table)
 
     input_filename = context.get_file_name(input_file_pointer)
-
 
     output_filename = os.path.splitext(input_filename)[0] + ".json"
 

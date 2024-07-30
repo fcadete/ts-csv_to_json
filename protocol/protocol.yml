@@ -7,7 +7,7 @@ steps:
     task:
       namespace: private-interview-fcadete
       slug: fcadete-csvtojson
-      version: v1.0.0
+      version: v1.0.1
       function: csv-to-json
     input:
       input_file_pointer: $( workflow.inputFile )
